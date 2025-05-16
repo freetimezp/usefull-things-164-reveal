@@ -136,8 +136,8 @@ img {
 
 .header h1 {
     position: relative;
-    font-size: 25vw;
-    font-weight: lighter;
+    font-size: 22vw;
+    font-weight: 100;
     letter-spacing: -0.02em;
     line-height: 0.85;
     transform: rotateY(60deg);
