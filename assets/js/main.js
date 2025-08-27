@@ -10,11 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
         x: -900,
         duration: 0.85,
         delay: 0.5,
-        ease: "power4.inOut"
+        ease: "power4.inOut",
     }); //can show 1
 
-
-    for(let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 6; i++) {
         const xPosition = -900 + i * 180;
 
         tl.to(".count", {
@@ -25,12 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 gsap.to(".count-wrapper", {
                     x: stepDistance * i,
                     duration: 0.85,
-                    ease: "power4.inOut"
+                    ease: "power4.inOut",
                 });
-            }
+            },
         }); // can show 2
     }
-
 
     gsap.set(".revealer svg", { scale: 0 });
 
@@ -43,60 +41,41 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power4.inOut",
             delay: delays[i],
             onComplete: () => {
-                if(i === delays.length - 1) {
+                if (i === delays.length - 1) {
                     document.querySelector(".loader").remove(); // can show 3
                 }
-            }
+            },
         });
     });
 
-
     gsap.to(".header h1", {
         onStart: () => {
+            gsap.to(".container", {
+                opacity: 1,
+                duration: 0.5,
+                delay: 0.4,
+                ease: "power4.inOut",
+            });
+
             gsap.to(".toggle-btn", {
                 scale: 1,
                 duration: 1,
-                ease: "power4.inOut"
+                delay: 0.5,
+                ease: "power4.inOut",
             });
 
             gsap.to(".line p", {
                 y: 0,
                 duration: 1,
                 stagger: 0.1,
-                ease: "power3.out"
+                delay: 0.5,
+                ease: "power3.out",
             });
         },
         rotateY: 0,
         opacity: 1,
         duration: 2,
         ease: "power3.out",
-        delay: 8
+        delay: 8,
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
